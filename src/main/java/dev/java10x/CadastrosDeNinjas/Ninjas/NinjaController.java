@@ -29,16 +29,16 @@ public class NinjaController {
     }
 
     //Procurar Ninja por ID(CREATE)
-    @GetMapping("/procurar/{id}")
-    public String procurarPorId(@PathVariable Long id) {
-        return "Procurando por ID: " + id;
+    @GetMapping("/listar/{id}")
+    public NinjaModel listarNinjasPorId(@PathVariable Long id) {
+        return ninjaService.listarNinjasPorId(id);
     }
 
     //Alterar dados do Ninja(UPDATE)
 
     @PutMapping("/alterar/{id}")
-    public String alterarNinja(@PathVariable Long id) {
-        return "Alterando Ninja com ID: " + id;
+    public NinjaModel listarAlterarNinja(@PathVariable Long id) {
+        return ninjaService.listarNinjasPorId(id);
     }
 
     //Deletar Ninja(DELETE)

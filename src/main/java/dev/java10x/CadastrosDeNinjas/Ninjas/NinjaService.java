@@ -2,8 +2,10 @@ package dev.java10x.CadastrosDeNinjas.Ninjas;
 
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NinjaService {
@@ -19,5 +21,10 @@ public class NinjaService {
         return ninjaRepository.findAll();
     }
 
+    //Procurar Ninja por ID(CREATE)
+    public NinjaModel listarNinjasPorId(Long id) {
+        Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
+        return ninjaPorId.orElse(null);
+    }
 
 }
