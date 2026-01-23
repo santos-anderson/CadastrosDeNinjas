@@ -15,6 +15,11 @@ public class MissoesServices {
         this.missoesRepository = missoesRepository;
     }
 
+    //Adicionar uma nova missão (CREATE)
+    public MissoesModel criarMissoes(MissoesModel missoes) {
+        return missoesRepository.save(missoes);
+    }
+
     //Listar todas as Missoes
     public List<MissoesModel> listarMissoes() {
         return missoesRepository.findAll();
@@ -24,5 +29,10 @@ public class MissoesServices {
     public MissoesModel listarMissoesPorId(Long id) {
         Optional<MissoesModel> missoesPorId = missoesRepository.findById(id);
         return missoesPorId.orElse(null);
+    }
+
+    //Deletar uma missão (DELETE)
+    public void deletarMissoesPorId(Long id) {
+        missoesRepository.deleteById(id);
     }
 }

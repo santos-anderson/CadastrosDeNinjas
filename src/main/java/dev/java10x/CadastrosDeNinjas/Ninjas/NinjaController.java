@@ -18,8 +18,8 @@ public class NinjaController {
 
     //Adicionar Ninja (CREATE)
     @PostMapping("/criar")
-    public String criarNinja() {
-        return "Ninja criado com sucesso";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+        return ninjaService.criarNinja(ninja);
     }
 
     //Mostrar todos os Ninjas (READ)
@@ -44,8 +44,8 @@ public class NinjaController {
     //Deletar Ninja(DELETE)
 
     @DeleteMapping("/deletar/{id}")
-    public String deletarNinja(@PathVariable Long id) {
-        return "Deletando Ninja com ID: " + id;
+    public void deletarNinjaPorId(@PathVariable Long id) {
+        ninjaService.deletarNinjaPorId(id);
     }
 
 
