@@ -7,12 +7,12 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class MissoesServices {
+public class MissoesService {
 
     private final MissoesRepository missoesRepository;
     private final MissoesMapper missoesMapper;
 
-    public MissoesServices(MissoesRepository missoesRepository, MissoesMapper missoesMapper) {
+    public MissoesService(MissoesRepository missoesRepository, MissoesMapper missoesMapper) {
         this.missoesRepository = missoesRepository;
         this.missoesMapper = missoesMapper;
     }
