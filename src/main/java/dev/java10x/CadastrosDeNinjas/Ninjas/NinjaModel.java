@@ -1,12 +1,11 @@
 package dev.java10x.CadastrosDeNinjas.Ninjas;
 
-
-
 import dev.java10x.CadastrosDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 //Entity ele transforma a classe em uma tabela no banco de dados
 //JPA = Java Persistence API
@@ -15,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "missoes")
 
 public class NinjaModel {
 
